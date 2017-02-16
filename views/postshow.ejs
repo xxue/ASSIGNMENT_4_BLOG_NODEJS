@@ -1,0 +1,60 @@
+<%- include('./partials/header') %>
+  <div id = "postupper">
+    <h1>Glowing Water!</h1>
+    <a><img src="img/bio.jpg" id = "bio"></a>
+    <a><i class="fa fa-heart-o" aria-hidden="true" style = "font-size: 23px; color: red; margin-left:30px"></i></a>
+    <a><i class="fa fa-bookmark-o" aria-hidden="true" style = "font-size: 23px; color: grey; float:right; margin-right: 30px"></i></a>
+    <div class="container-fluid" id = "comment1">
+    <p>If you’ve cruised for long (and even if you haven’t), you’ve probably wondered what that amazing glow in the water might be?  We’ve had it explained a gazillion different ways … tiny sea creatures that glow, glowing squid, etc.  But none of the “explanations” conjured up by cruisers seemed a logical or scientific explanation.</p><br>
+    <p>Unfortunately, even though this phenomenon is one of my biggest joys and wonders of cruising, I have never gotten a good photo.  (The photo above, and many other amazing glowing water photos are courtesy of Phil Hart, philhart.com, click here to go see more!)</p><br>
+    <p>It’s one of those things that when gazing at the brilliance, my mood instantly elevates and I feel like an amazed kid again!  I can remember many an overnight passage enjoying my time on watch at night gazing spellbound at the lights rushing by in the water.  The light swirls are every bit as mesmerizing as watching a fire crackle and pop.   Some nights I sit in the back of the cockpit watching as Bo (our monitor windvane)’s blade in the water cuts through the luminescent water leaving dark trails where the light was disrupted.   Sometimes my kitchen timer has to go off to remind me it’s time to take my every 15 minute look around for ships!</p><br>
+    <p>I also remember many nights sipping a sunsetter cocktail with friends when we all dashed to one side or the other of the boat to watch the light show go by – turning the discussion to what in the world it could be. And the most special memories of all were the nights in Sapodilla Lagoon, Belize, where we’d literally put the dinghy in the water after dark and drive circles around each other’s boats to watch the light show from the prop as the dinghy cut through the water.</p><br>
+    <p>Now, National Geographic tells me that the light is a marine microbe called phytoplankton, but they also go on to say that there are many different sea creatures that can emit light, most commonly when agitated, as when wind blows water past the hull of an anchored sailboat, or some excited cruisers get in a dinghy and twirl around to watch the light show from the outboard propeller! I didn’t know there’s even a Nobel Prize been given for research on bioluminescence!</p><br>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12" id = "postlower">
+    <!-- comments1-->
+    <div class="leftbox">
+      <a><img src="img/orca.jpg" id = "orca"></a>
+      <div class="rightbox">
+        <a href="#" style = "color: black"><strong>Author 1</strong></a><br>
+        <p>The biological light, or bioluminescence, in the waves is the product of marine microbes called phytoplankton—and now scientists think they know how some of these life-forms create their brilliant blue glow.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- comments form -->
+    <div class = "container" id = "bottom">
+      <form id = "form">
+      <label for="comments"><h3 style="margin-top: 30px;">Leave a comment..</h3></label><br>
+      <textarea class="form-control hresize" id = "commentfield" name="comments" rows="5" cols="16"></textarea><br>
+      <label for="user"><h3>Full name:</h3></label>
+      <input type="text" name="user">
+    </form>
+
+    <%for (let i = 1; i < 4; i++){ %>
+      <div class="col-xs-12" id = "repeatcomments">
+        <a><img src="img/orca.jpg" id = "orca"></a>
+        <div class="col-xs-12">
+          <h4>Author<%=i%></h4>
+          <h5>comment date</h5>
+          <p><%= faker.lorem.paragraphs(1)%></p>
+        </div>
+
+      </div>
+      <% } %>
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+<%- include('./partials/footer') %>

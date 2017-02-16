@@ -1,0 +1,50 @@
+<%- include('./partials/header') %>
+  <!-- mobile hidden part -->
+    <div class="container-fluid" id = "mobilehide">
+      <!-- featured post -->
+      <div class="row" id = "upper">
+        <!-- left, css flex: 3 -->
+        <div class="col-xs-7">
+            <a class = "flexpic"><img src="img/2sail.jpg" id = "sunset"></a>
+            <a><i class="fa fa-heart-o" aria-hidden="true" style = "font-size: 23px; color: red"></i></a>
+            <a><i class="fa fa-bookmark-o" aria-hidden="true" style = "font-size: 23px; color: grey; float:right"></i></a>
+            <article class="col-sm-12 col-lg-12">
+            <h3 href = "#">Learn to Sail!</h3>
+             <p>In learning to sail then, one just has to fundamentally realize that the way that the sails are presented to the wind gives rise to force on the sails which is transferred to the boat.When going downwind, you might liken the effect to trying to hold a sheet of plywood in the wind. The wind would have it’s greatest effect on the plywood when it was perpendicular to the wind. So in the same way , when going down wind you want as much of that sail presented perpendicular to the wind a s possible. IE let the sails out square to the wind.</p>
+           </article>
+        </div>
+        <!-- right: most liked css flex: 2 -->
+        <div class="col-xs-3">
+          <h3 style = "padding-left: 25px"> Most Liked </h3>
+            <ul style="list-style:none">
+              <% for (let i of popular) { %>
+                <a href="#"><li><%= i %></li></a>
+              <% } %>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- lower panels -->
+    <div class="container-fluid">
+      <div class="row" id = "lower">
+          <%for (let i = 1; i <= 6; i++){ %>
+            <div class= "col-xs-12 col-md-5 col-lg-4" id = "deskboxes">
+<!-- 6 boxes, div 1: redsail+[heart+bookmark], set width of the 2 divs same (95%) as parent (deskboxes)-->
+              <a href="#"><img src="img/1redsail.jpg" id = "redsail"></a>
+              <div class="block">
+                <a><i class="fa fa-heart-o" aria-hidden="true" style = "font-size: 23px; color: red"></i></a>
+                <a><i class="fa fa-bookmark-o" aria-hidden="true" style = "font-size: 23px; color: grey; float:right"></i></a>
+              </div>
+<!-- div 2, post summaries, set div (mybox) width same (95%) as parent deskboxes-->
+              <div class = "col-xs-12 col-md-5 col-lg-4" id = "mybox">
+                <h3><a href="#">Post Title <%=i%></a></h2>
+                <p><%= faker.lorem.sentences(3)%></p>
+                <p>post name</p>
+                <p>post date</p>
+              </div>
+              </div>
+              <% } %>
+          </div>
+    </div>
+<%- include('./partials/footer') %>
